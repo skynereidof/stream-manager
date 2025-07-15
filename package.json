@@ -1,0 +1,31 @@
+
+{
+  "name": "stream-manager",
+  "version": "1.0.0",
+  "description": "Aplikacja do zarządzania transmisjami",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --linux --x64"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.8"
+  },
+  "devDependencies": {
+    "electron": "^36.0.0",
+    "electron-builder": "^24.6.3"
+  },
+  "build": {
+    "appId": "com.example.streammanager",
+    "linux": {
+      "target": "AppImage",
+      "category": "Utility"
+    },
+    "extraResources": [
+      {
+        "from": "node_modules/@electron/remote",
+        "to": "app/node_modules/@electron/remote"
+      }
+    ]
+  }
+}
